@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import React, { useState } from "react";
 import AutoGetButton from "../../components/AutoGetButton";
+import ItemSelect from "../../components/ItemSelect";
 
 function addCallApi(toAdd) {
   Cookies.set("callapi", Cookies.get("callapi") + toAdd);
@@ -162,7 +163,7 @@ function BCS() {
                   <span className="input-group-text">
                     <i className="bi bi-box"></i>
                   </span>
-                  <input
+                  <ItemSelect
                     id="name-to-sell"
                     type="text"
                     className="form-control"
@@ -172,7 +173,7 @@ function BCS() {
                     onChange={(e) => setNameToSell(e.target.value)}
                     value={nameToSell}
                     required
-                  ></input>
+                  />
                 </div>
               </div>
               {/* Item Quantity */}
@@ -319,7 +320,7 @@ function BCS() {
                           <span className="input-group-text">
                             <i className="bi bi-box"></i>
                           </span>
-                          <input
+                          <ItemSelect
                             id={`name-${item.id}`}
                             type="text"
                             className="form-control"

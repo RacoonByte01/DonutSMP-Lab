@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import { useState } from "react";
 import AutoGetButton from "../../components/AutoGetButton";
+import ItemSelect from "../../components/ItemSelect";
 
 function Sell() {
   const [name, setName] = useState();
@@ -101,7 +102,7 @@ function Sell() {
                 <span className="input-group-text" id="basic-addon1">
                   <i className="bi bi-box"></i>
                 </span>
-                <input
+                <ItemSelect
                   id="name"
                   type="text"
                   className="form-control"
@@ -111,7 +112,7 @@ function Sell() {
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                   required
-                ></input>
+                />
               </div>
               {/* Item Quantity */}
               <div className="input-group mb-3">

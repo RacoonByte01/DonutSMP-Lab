@@ -1,3 +1,5 @@
+import { resolveItem } from "./items.js";
+
 const BASE = import.meta.env?.VITE_API_BASE || "/api";
 
 const SOURCES = {
@@ -17,14 +19,15 @@ export function weightedAverage(entries, quantityKey) {
   return totals.quantity > 0 ? totals.price / totals.quantity : null;
 }
 
-async function suggestPrice({ side, item, limit = 20, apikey, exact = false }) {
+async function suggestPrice({ side, item, limit = 20, apikey }) {
   const source = SOURCES[side];
   if (!source) throw new Error(`Unknown side: ${side}`);
   if (!item) throw new Error("Item is required");
 
+  const key = resolveItem(item);
   const safeLimit = Math.min(Math.max(Math.trunc(Number(limit)) || 20, 1), 200);
   const params = new URLSearchParams({
-    [exact ? "item" : "q"]: item,
+    [key ? "item" : "q"]: key ?? item,
     sort: "price",
     limit: String(safeLimit),
   });

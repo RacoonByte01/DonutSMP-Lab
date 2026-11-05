@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import AdminLayout from "./layouts/AdminLayout";
+import { ItemDatalist } from "./components/ItemSelect";
 
 import Dev from "./pages/Test/Dev";
 import Login from "./pages/Settings/Login";
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <AdminLayout>
+        <ItemDatalist />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
