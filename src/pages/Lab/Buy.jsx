@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { useState } from "react";
 import AutoGetButton from "../../components/AutoGetButton";
 import ItemSelect from "../../components/ItemSelect";
@@ -10,9 +9,6 @@ function Buy() {
   const [showStats, setShowStats] = useState(false);
   const [stats, setStats] = useState([0, 0, 0, 0]);
 
-  function addCallApi(toAdd) {
-    Cookies.set("callapi", Cookies.get("callapi") + toAdd);
-  }
   function calcs() {
     event.preventDefault();
     setShowStats(true);

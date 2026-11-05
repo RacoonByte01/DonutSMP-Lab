@@ -29,6 +29,7 @@ function AutoGetButton({ side, getItem, onValue }) {
     }
 
     setLoading(true);
+    Cookies.set("callapi", Number(Cookies.get("callapi") || 0) + 1);
     try {
       const value = await suggestPrice({ side, item, limit, apikey });
       onValue(String(value));

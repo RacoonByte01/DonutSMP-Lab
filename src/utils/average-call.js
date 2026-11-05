@@ -1,6 +1,9 @@
 import { resolveItem } from "./items.js";
 
-const BASE = import.meta.env?.VITE_API_BASE || "/api";
+const native = globalThis.Capacitor?.isNativePlatform?.();
+const BASE =
+  import.meta.env?.VITE_API_BASE ||
+  (native ? "https://api.donutstats.io" : "/api");
 
 const SOURCES = {
   sell: { path: "auction", quantityKey: "count" },

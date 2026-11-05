@@ -1,11 +1,6 @@
-import Cookies from "js-cookie";
 import React, { useState } from "react";
 import AutoGetButton from "../../components/AutoGetButton";
 import ItemSelect from "../../components/ItemSelect";
-
-function addCallApi(toAdd) {
-  Cookies.set("callapi", Cookies.get("callapi") + toAdd);
-}
 
 function BCS() {
   const [qualityPrices, setQualityPrices] = useState([]);
