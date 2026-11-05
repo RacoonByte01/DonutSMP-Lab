@@ -1,7 +1,7 @@
 import { resolveItem } from "./items.js";
 
 const native = globalThis.Capacitor?.isNativePlatform?.();
-const BASE =
+export const BASE =
   import.meta.env?.VITE_API_BASE ||
   (native ? "https://api.donutstats.io" : "/api");
 

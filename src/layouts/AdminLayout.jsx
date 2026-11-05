@@ -92,6 +92,17 @@ function AdminLayout({ children }) {
                   </NavLink>
                 </li>
 
+                <li className="nav-item">
+                  <NavLink
+                    to="/history"
+                    className="nav-link"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    <i className="nav-icon bi bi-graph-up"></i>
+                    <p>History</p>
+                  </NavLink>
+                </li>
+
                 <li className="nav-header">Configuration</li>
 
                 <li className="nav-item">

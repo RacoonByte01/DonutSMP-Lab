@@ -105,7 +105,7 @@ function Buy() {
                   placeholder="Name..."
                   aria-label="name"
                   aria-describedby="basic-addon1"
-                  onChange={(e) => setName(e.target.value)}
+                  onValue={setName}
                   value={name}
                   required
                 />

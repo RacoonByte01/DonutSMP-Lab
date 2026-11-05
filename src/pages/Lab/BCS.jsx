@@ -165,7 +165,7 @@ function BCS() {
                     placeholder="Name..."
                     aria-label="name"
                     aria-describedby="basic-addon1"
-                    onChange={(e) => setNameToSell(e.target.value)}
+                    onValue={setNameToSell}
                     value={nameToSell}
                     required
                   />
@@ -321,12 +321,8 @@ function BCS() {
                             className="form-control"
                             placeholder="Name..."
                             value={item.name}
-                            onChange={(e) =>
-                              updateQualityPrice(
-                                item.id,
-                                "name",
-                                e.target.value,
-                              )
+                            onValue={(value) =>
+                              updateQualityPrice(item.id, "name", value)
                             }
                           />
                         </div>
