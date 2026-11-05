@@ -13,7 +13,7 @@ function Dashboard() {
       </div>
       {/* Stats */}
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm col-md">
           <div class="info-box">
             <span class="info-box-icon text-bg-primary shadow-sm">
               <i class="bi bi-telephone-forward-fill"></i>

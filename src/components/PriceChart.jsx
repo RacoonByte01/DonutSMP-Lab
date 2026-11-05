@@ -38,8 +38,8 @@ function PriceChart({ points, interval }) {
       data: {
         labels: points.map((point) => label(point.t, interval)),
         datasets: [
-          line("Venta", "sell", interval, points),
-          line("Compra", "buy", interval, points),
+          line("Sell", "sell", interval, points),
+          line("Buy", "buy", interval, points),
         ],
       },
       options: {

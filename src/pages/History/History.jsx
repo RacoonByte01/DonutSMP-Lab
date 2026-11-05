@@ -15,12 +15,12 @@ function History() {
   async function load(selected = range) {
     const apikey = Cookies.get("apikey");
     if (!apikey) {
-      alert("Configura la API key en Configuration > API Key");
+      alert("Configure the API key in Configuration > API Key");
       return;
     }
     const key = resolveItem(name);
     if (!key) {
-      alert("Elige un ítem del catálogo (el texto libre no tiene historial)");
+      alert("Pick an item from the catalogue (free text has no history)");
       return;
     }
 
@@ -73,11 +73,11 @@ function History() {
                 onClick={() => load()}
                 disabled={loading}
               >
-                {loading ? "Cargando..." : "Ver gráfica"}
+                {loading ? "Loading..." : "View chart"}
               </button>
             </div>
 
-            <div className="btn-group mb-3" role="group" aria-label="Rango">
+            <div className="btn-group mb-3" role="group" aria-label="Range">
               {Object.keys(RANGES).map((option) => (
                 <button
                   key={option}
@@ -95,7 +95,7 @@ function History() {
             {error && <div className="alert alert-danger">{error}</div>}
             {points?.length === 0 && (
               <div className="alert alert-warning">
-                No hay datos para este ítem en ese rango.
+                No data for this item in that range.
               </div>
             )}
             {points?.length > 0 && (
