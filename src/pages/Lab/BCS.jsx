@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import React, { useState } from "react";
+import AutoGetButton from "../../components/AutoGetButton";
 
 function addCallApi(toAdd) {
   Cookies.set("callapi", Cookies.get("callapi") + toAdd);
@@ -212,11 +213,11 @@ function BCS() {
                     value={priceToSell}
                     required
                   ></input>
-                  <span className="input-group-append">
-                    <button type="button" className="btn btn-primary">
-                      Auto get
-                    </button>
-                  </span>
+                  <AutoGetButton
+                    side="sell"
+                    getItem={() => nameToSell}
+                    onValue={setPriceToSell}
+                  />
                 </div>
               </div>
             </div>
@@ -376,11 +377,13 @@ function BCS() {
                               )
                             }
                           />
-                          <span className="input-group-append">
-                            <button type="button" className="btn btn-primary">
-                              Auto get
-                            </button>
-                          </span>
+                          <AutoGetButton
+                            side="buy"
+                            getItem={() => item.name}
+                            onValue={(value) =>
+                              updateQualityPrice(item.id, "price", value)
+                            }
+                          />
                         </div>
                       </div>
                       <div className="col-md-1 text-end">

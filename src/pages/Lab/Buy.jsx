@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import { useState } from "react";
+import AutoGetButton from "../../components/AutoGetButton";
 
 function Buy() {
   const [name, setName] = useState();
@@ -147,11 +148,11 @@ function Buy() {
                   min="0"
                   required
                 ></input>
-                <span className="input-group-append">
-                  <button type="button" className="btn btn-primary">
-                    Auto get
-                  </button>
-                </span>
+                <AutoGetButton
+                  side="buy"
+                  getItem={() => name}
+                  onValue={setPrice}
+                />
               </div>
             </div>
             <div className="card-footer">
