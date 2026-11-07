@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import AdminLayout from "./layouts/AdminLayout";
 
-import Dev from "./pages/Test/Dev";
+// import Dev from "./pages/Test/Dev";
 import Login from "./pages/Settings/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Buy from "./pages/Lab/Buy";
